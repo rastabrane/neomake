@@ -84,8 +84,8 @@ Execute (Reports exit status):
     let jobinfo = neomake#GetJobs()[job_id]
     NeomakeTestsWaitForFinishedJobs
 
-    AssertNeomakeMessage 'sh: sh -c ''exit 7'': completed with exit code 7.', 1, jobinfo
     AssertNeomakeMessage 'exit: sh: sh -c ''exit 7'': 7', 3, jobinfo
+    AssertNeomakeMessage 'sh: sh -c ''exit 7'': completed with exit code 7.', 1, jobinfo
   endif
 
 Execute (neomake#Sh: job_id):
